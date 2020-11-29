@@ -1,5 +1,6 @@
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
+import Router from './router';
 
 const GlobalStyles = createGlobalStyle`
   body {
@@ -12,7 +13,7 @@ function App() {
 	return (
 		<div>
 			<GlobalStyles />
-			<div>App</div>
+			<Router />
 		</div>
 	);
 }
