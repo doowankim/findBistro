@@ -3,12 +3,11 @@ import * as Styled from './styles';
 
 function Header() {
 	const [click, setClick] = useState<boolean>(false);
-	console.log(click);
 	return (
 		<Styled.Container>
 			<Styled.Wrapper>
 				<Styled.LogoBox>
-					<Styled.Logo>직점</Styled.Logo>
+					<Styled.Logo>밥생각</Styled.Logo>
 					<Styled.LogoDescription>
 						오늘 점심은 뭘 먹지? 🤪
 					</Styled.LogoDescription>
