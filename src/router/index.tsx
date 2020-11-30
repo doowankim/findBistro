@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { StartPage } from '../containers';
 
-const Router = () => {
+function Router() {
 	return (
 		<BrowserRouter>
 			<Switch>
@@ -12,6 +12,6 @@ const Router = () => {
 			</Switch>
 		</BrowserRouter>
 	);
-};
+}
 
 export default Router;

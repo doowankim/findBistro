@@ -1,9 +1,21 @@
 import React from 'react';
+import * as Styled from './styles';
 
-const Modal = () => {
+interface ModalProps {
+	body?: JSX.Element | undefined;
+	children?: any;
+}
+
+const Modal = (props: ModalProps) => {
 	return (
 		<div>
-			<div>Modal</div>
+			<Styled.BackgroundView />
+			<Styled.Container>
+				<Styled.Wrapper>
+					{props.body}
+					{props.children}
+				</Styled.Wrapper>
+			</Styled.Container>
 		</div>
 	);
 };
