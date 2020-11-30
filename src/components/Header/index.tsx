@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import * as Styled from './styles';
 
 function Header() {
+	const [click, setClick] = useState<boolean>(false);
+	console.log(click);
 	return (
 		<Styled.Container>
 			<Styled.Wrapper>
-				<div>
+				<Styled.LogoBox>
 					<Styled.Logo>직점</Styled.Logo>
-					<Styled.LogoDescription>오늘 점심은 뭘 먹지?</Styled.LogoDescription>
-				</div>
+					<Styled.LogoDescription>
+						오늘 점심은 뭘 먹지? 🤪
+					</Styled.LogoDescription>
+				</Styled.LogoBox>
 				<div>
 					{window.screen.width > 400 ? (
 						<Styled.Menu>
@@ -18,7 +22,18 @@ function Header() {
 							<Styled.MenuItem>메뉴</Styled.MenuItem>
 						</Styled.Menu>
 					) : (
-						<Styled.MenuIcon className="fas fa-bars" />
+						<>
+							{click ? (
+								<Styled.MenuList>
+									<div onClick={() => setClick(false)}>숨기기</div>
+								</Styled.MenuList>
+							) : (
+								<Styled.MenuIcon
+									className="fas fa-bars"
+									onClick={() => setClick(true)}
+								/>
+							)}
+						</>
 					)}
 				</div>
 			</Styled.Wrapper>

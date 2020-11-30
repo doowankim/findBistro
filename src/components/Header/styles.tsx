@@ -1,5 +1,16 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { darken } from 'polished';
+
+const menuAni = keyframes`
+    0% {
+        opacity: 0;
+        right: -100px;
+    }
+    100% {
+        opacity: 1;
+        right: 0;
+    }
+`;
 
 export const Container = styled.div`
 	width: 100%;
@@ -13,6 +24,10 @@ export const Wrapper = styled.div`
 	align-items: center;
 	justify-content: space-between;
 	padding: 25px 20px;
+`;
+
+export const LogoBox = styled.div`
+	// position: absolute;
 `;
 
 export const Logo = styled.div`
@@ -39,4 +54,13 @@ export const MenuItem = styled.div`
 
 export const MenuIcon = styled.i`
 	font-size: 24px;
+	animation: ${menuAni} 0.5s;
+`;
+
+export const MenuList = styled.div`
+	position: relative;
+	width: 80px;
+	height: 100px;
+	background: #495057;
+	animation: ${menuAni} 0.5s;
 `;
