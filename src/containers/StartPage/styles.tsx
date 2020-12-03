@@ -34,6 +34,7 @@ export const IconBox = styled.div<iconProps>`
   margin: 0 20px;
   box-shadow: initial;
   transition: 0.35s;
+  cursor: pointer;
 
   &:hover {
     background: ${lighten(0.05, 'black')};
@@ -58,7 +59,6 @@ export const IconBox = styled.div<iconProps>`
 export const Icon = styled.i<iconProps>`
   color: #fff;
   line-height: 50px;
-  cursor: pointer;
 
   ${props => {
     if (props.light)
@@ -74,14 +74,14 @@ export const IconText = styled.div`
   font-size: 14px;
   font-weight: bold;
   justify-content: space-between;
-  margin: 10px 15px;
+  margin: 10px 15px 50px 15px;
 `;
 
 export const Button = styled.button`
   width: 180px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  padding: 5px 0;
+  padding: 10px 0;
   cursor: pointer;
   background: #f2f2f2;
   transition: 0.35s;
