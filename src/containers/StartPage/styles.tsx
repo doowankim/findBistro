@@ -21,6 +21,11 @@ export const InputText = styled.div`
   }
 `;
 
+export const ModalTitle = styled.div`
+  text-align: center;
+  margin-bottom: 20px;
+`;
+
 export const IconWrapper = styled.div`
   display: flex;
 `;
@@ -74,7 +79,7 @@ export const IconText = styled.div`
   font-size: 14px;
   font-weight: bold;
   justify-content: space-between;
-  margin: 10px 15px 50px 15px;
+  margin: 10px 15px 30px 15px;
 `;
 
 export const Button = styled.button`
