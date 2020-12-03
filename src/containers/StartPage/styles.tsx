@@ -7,9 +7,18 @@ interface iconProps {
 
 export const InputItem = styled.div`
   display: block;
-  justify-content: center;
-  text-align: center;
-  margin-top: 50px;
+`;
+
+export const InputText = styled.div`
+  position: relative;
+  width: max-content;
+  align-items: center;
+  margin: 50px auto;
+
+  div {
+    color: #495057;
+    line-height: 30px;
+  }
 `;
 
 export const IconWrapper = styled.div`
