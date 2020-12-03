@@ -16,7 +16,19 @@ function StartPage() {
       </Styled.InputItem>
       {modalState && (
         <Modal>
-          <button onClick={() => setModalState(false)}>닫기</button>
+          <Styled.IconWrapper>
+            <Styled.IconBox light>
+              <Styled.Icon className="fas fa-sun" light />
+            </Styled.IconBox>
+            <Styled.IconBox>
+              <Styled.Icon className="far fa-moon" />
+            </Styled.IconBox>
+          </Styled.IconWrapper>
+          <Styled.IconText>
+            <div>라이트 모드</div>
+            <div>다크 모드</div>
+          </Styled.IconText>
+          <Styled.Button onClick={() => setModalState(false)}>닫기</Styled.Button>
         </Modal>
       )}
     </div>
