@@ -9,9 +9,11 @@ function StartPage() {
     <div>
       <Header />
       <Styled.InputItem>
-        <div>오늘은 뭐 먹을까? 고민하지 마세요</div>
-        <div>점심 고르는건 밥생각이 해드릴테니까요 😜</div>
-        <div>아래의 룰렛을 돌려보세요</div>
+        <Styled.InputText>
+          <div>아직도 점심식사로 고민하세요?</div>
+          <div>친구들, 직장동료들과 생각한 메뉴를 룰렛에 넣어보세요.</div>
+          <div>밥생각이 딱 정해드릴게요.</div>
+        </Styled.InputText>
         <Roulette />
       </Styled.InputItem>
       {modalState && (
