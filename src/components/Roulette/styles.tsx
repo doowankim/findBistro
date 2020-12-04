@@ -16,6 +16,10 @@ interface buttonProps {
   stop?: boolean;
 }
 
+interface loopProps {
+  spinner?: boolean;
+}
+
 const rotation = keyframes`
     from {
         transform: rotate(0deg);
@@ -36,7 +40,7 @@ export const Arrow = styled.div`
   margin: 30px auto 0 auto;
 `;
 
-export const Circle = styled.div`
+export const Circle = styled.div<loopProps>`
   width: 300px;
   height: 300px;
   border-radius: 50%;
@@ -44,10 +48,13 @@ export const Circle = styled.div`
   border: 3px solid black;
   position: relative;
   margin: 10px auto;
-`;
 
-export const Loop = styled.div`
-  animation: ${rotation} 7s ease-in-out forwards;
+  ${props => {
+    if (props.spinner)
+      return css`
+        animation: ${rotation} 7s ease-in-out forwards;
+      `;
+  }}
 `;
 
 export const Fill = styled.div<fillProps>`

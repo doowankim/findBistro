@@ -1,11 +1,16 @@
 import React from 'react';
 import * as Styled from './styles';
 
-function Roulette() {
+interface rouletteProps {
+  spin?: boolean;
+  menu?: any;
+}
+
+function Roulette(props: rouletteProps) {
   return (
     <Styled.RouletteBox>
       <Styled.Arrow />
-      <Styled.Circle>
+      <Styled.Circle spinner={props.spin ? true : false}>
         <Styled.Fill fill_1>
           <Styled.Content>보쌈</Styled.Content>
         </Styled.Fill>
@@ -31,10 +36,6 @@ function Roulette() {
           <Styled.Content>고기</Styled.Content>
         </Styled.Fill>
       </Styled.Circle>
-      <Styled.Trigger>
-        <Styled.Button>돌리기</Styled.Button>
-        <Styled.Button stop>멈추기</Styled.Button>
-      </Styled.Trigger>
     </Styled.RouletteBox>
   );
 }
