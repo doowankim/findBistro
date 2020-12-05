@@ -16,6 +16,10 @@ function StartPage() {
     menu7: '',
     menu8: '',
   });
+
+  const handleChange = (e: any) => {
+    setList({ ...list, [e.target.name]: e.target.value });
+  };
   return (
     <div>
       <Header />
@@ -54,17 +58,72 @@ function StartPage() {
       {menu && (
         <Modal>
           <div>메뉴를 넣어주세요</div>
-          <div style={{ display: 'block' }}>
-            <input />
-            <input />
-            <input />
-            <input />
-            <input />
-            <input />
-            <input />
-            <input />
-          </div>
-          <button onClick={() => setMenu(false)}>닫기</button>
+          <form>
+            <Styled.InputBox>
+              <input
+                name="menu1"
+                type="text"
+                placeholder="첫 번째 메뉴"
+                onChange={handleChange}
+                value={list.menu1}
+              />
+              <input
+                name="menu2"
+                type="text"
+                placeholder="두 번째 메뉴"
+                onChange={handleChange}
+                value={list.menu2}
+              />
+              <input
+                name="menu3"
+                type="text"
+                placeholder="세 번째 메뉴"
+                onChange={handleChange}
+                value={list.menu3}
+              />
+              <input
+                name="menu4"
+                type="text"
+                placeholder="네 번째 메뉴"
+                onChange={handleChange}
+                value={list.menu4}
+              />
+              <input
+                name="menu5"
+                type="text"
+                placeholder="다섯 번째 메뉴"
+                onChange={handleChange}
+                value={list.menu5}
+              />
+              <input
+                name="menu6"
+                type="text"
+                placeholder="여섯 번째 메뉴"
+                onChange={handleChange}
+                value={list.menu6}
+              />
+              <input
+                name="menu7"
+                type="text"
+                placeholder="일곱 번째 메뉴"
+                onChange={handleChange}
+                value={list.menu7}
+              />
+              <input
+                name="menu8"
+                type="text"
+                placeholder="여덟 번째 메뉴"
+                onChange={handleChange}
+                value={list.menu8}
+              />
+            </Styled.InputBox>
+            <Styled.BottomBox>
+              <div>
+                <Styled.BottomButton>선택 완료</Styled.BottomButton>
+                <Styled.BottomButton onClick={() => setMenu(false)}>닫기</Styled.BottomButton>
+              </div>
+            </Styled.BottomBox>
+          </form>
         </Modal>
       )}
     </div>

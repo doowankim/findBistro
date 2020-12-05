@@ -9,6 +9,10 @@ interface buttonProps {
   spin?: boolean;
 }
 
+interface bottomProps {
+  green?: boolean;
+}
+
 export const ButtonBox = styled.div`
   display: flex;
   width: max-content;
@@ -132,4 +136,28 @@ export const Button = styled.button`
     background: ${darken(0.05, '#f2f2f2')};
     transition: 0.35s;
   }
+`;
+
+export const InputBox = styled.div`
+  width: 320px;
+
+  input {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+`;
+
+export const BottomBox = styled.div`
+  width: 320px;
+
+  div {
+    justify-content: space-between;
+  }
+`;
+
+export const BottomButton = styled.button`
+  width: 120px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px 20px;
 `;
