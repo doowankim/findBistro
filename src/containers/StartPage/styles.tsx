@@ -10,7 +10,7 @@ interface buttonProps {
 }
 
 interface bottomProps {
-  green?: boolean;
+  blue?: boolean;
 }
 
 export const ButtonBox = styled.div`
@@ -139,25 +139,62 @@ export const Button = styled.button`
 `;
 
 export const InputBox = styled.div`
-  width: 320px;
+  width: 280px;
 
+  div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 20px;
+    }
+  }
   input {
+    width: 110px;
+    height: 30px;
     border: 1px solid #ddd;
     border-radius: 5px;
+    padding-left: 10px;
+    transition: 0.35s;
+
+    &:focus {
+      border: 1px solid #5b5bf7;
+      transition: 0.25s;
+    }
   }
 `;
 
 export const BottomBox = styled.div`
-  width: 320px;
-
-  div {
-    justify-content: space-between;
-  }
+  display: flex;
+  width: 250px;
+  justify-content: space-between;
+  margin: 0 auto;
 `;
 
-export const BottomButton = styled.button`
+export const BottomButton = styled.button<bottomProps>`
   width: 120px;
   border: 1px solid #ddd;
   border-radius: 5px;
+  background: #f2f2f2;
   padding: 10px 20px;
+  cursor: pointer;
+  transition: 0.35s;
+
+  &:hover {
+    background: ${darken(0.1, '#f2f2f2')};
+    transition: 0.35s;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  ${props => {
+    if (props.blue)
+      return css`
+        background: #5b5bf7;
+        color: #fff;
+      `;
+  }}
 `;
