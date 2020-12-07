@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal, Header, Roulette } from '../../components';
+import { Modal, Header, Roulette, RouletteButton } from '../../components';
 import * as Styled from './styles';
 
 function StartPage() {
@@ -31,10 +31,8 @@ function StartPage() {
         </Styled.InputText>
         <Roulette spin={rouletteState} />
         <Styled.ButtonBox>
-          <Styled.RouletteButton onClick={() => setMenu(true)}>메뉴 넣기</Styled.RouletteButton>
-          <Styled.RouletteButton spin onClick={() => setRouletteState(true)}>
-            돌리기
-          </Styled.RouletteButton>
+          <RouletteButton onClick={() => setMenu(true)} body="메뉴 넣기" />
+          <RouletteButton onClick={() => setRouletteState(true)} body="돌리기" rouletteState />
         </Styled.ButtonBox>
       </Styled.InputItem>
       {modalState && (
