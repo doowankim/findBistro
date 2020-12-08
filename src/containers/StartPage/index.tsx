@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal, Header, Roulette, RouletteButton } from '../../components';
+import { Modal, Header, Button, Roulette, RouletteButton } from '../../components';
 import * as Styled from './styles';
 
 function StartPage() {
@@ -132,8 +132,10 @@ function StartPage() {
               </div>
             </Styled.InputBox>
             <Styled.BottomBox>
-              <Styled.BottomButton blue>완료</Styled.BottomButton>
-              <Styled.BottomButton onClick={() => setMenu(false)}>닫기</Styled.BottomButton>
+              <Button body="완료" blue />
+              <Button body="닫기" onClick={() => setMenu(false)} />
+              {/* <Styled.BottomButton blue>완료</Styled.BottomButton>
+              <Styled.BottomButton onClick={() => setMenu(false)}>닫기</Styled.BottomButton> */}
             </Styled.BottomBox>
           </form>
         </Modal>

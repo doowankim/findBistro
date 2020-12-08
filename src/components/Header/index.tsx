@@ -1,5 +1,6 @@
 import React from 'react';
 import * as Styled from './styles';
+import { Button } from '../../components';
 
 function Header() {
   return (
@@ -11,7 +12,7 @@ function Header() {
         </Styled.LogoBox>
         <div>
           <Styled.Menu>
-            <Styled.MenuMode>DARK / LIGHT</Styled.MenuMode>
+            <Button body="DARK / LIGHT" noWidth />
           </Styled.Menu>
         </div>
       </Styled.Wrapper>
