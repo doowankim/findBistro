@@ -20,6 +20,10 @@ export const Button = styled.button<buttonProps>`
     transition: 0.35s;
   }
 
+  &:focus {
+    outline: none;
+  }
+
   ${props => {
     if (props.spin)
       return css`
