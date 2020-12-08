@@ -134,8 +134,6 @@ function StartPage() {
             <Styled.BottomBox>
               <Button body="완료" blue />
               <Button body="닫기" onClick={() => setMenu(false)} />
-              {/* <Styled.BottomButton blue>완료</Styled.BottomButton>
-              <Styled.BottomButton onClick={() => setMenu(false)}>닫기</Styled.BottomButton> */}
             </Styled.BottomBox>
           </form>
         </Modal>
