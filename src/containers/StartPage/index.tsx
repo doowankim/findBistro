@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal, Header, Button, Roulette, RouletteButton } from '../../components';
+import { Modal, Header, Button, Roulette, RouletteButton, Input } from '../../components';
 import * as Styled from './styles';
 
 function StartPage() {
@@ -59,7 +59,7 @@ function StartPage() {
           <form>
             <Styled.InputBox>
               <div>
-                <input
+                <Input
                   name="menu1"
                   type="text"
                   placeholder="첫 번째 메뉴"
@@ -67,7 +67,7 @@ function StartPage() {
                   value={list.menu1}
                   maxLength={5}
                 />
-                <input
+                <Input
                   name="menu2"
                   type="text"
                   placeholder="두 번째 메뉴"
@@ -77,7 +77,7 @@ function StartPage() {
                 />
               </div>
               <div>
-                <input
+                <Input
                   name="menu3"
                   type="text"
                   placeholder="세 번째 메뉴"
@@ -85,7 +85,7 @@ function StartPage() {
                   value={list.menu3}
                   maxLength={5}
                 />
-                <input
+                <Input
                   name="menu4"
                   type="text"
                   placeholder="네 번째 메뉴"
@@ -95,7 +95,7 @@ function StartPage() {
                 />
               </div>
               <div>
-                <input
+                <Input
                   name="menu5"
                   type="text"
                   placeholder="다섯 번째 메뉴"
@@ -103,7 +103,7 @@ function StartPage() {
                   value={list.menu5}
                   maxLength={5}
                 />
-                <input
+                <Input
                   name="menu6"
                   type="text"
                   placeholder="여섯 번째 메뉴"
@@ -113,7 +113,7 @@ function StartPage() {
                 />
               </div>
               <div>
-                <input
+                <Input
                   name="menu7"
                   type="text"
                   placeholder="일곱 번째 메뉴"
@@ -121,7 +121,7 @@ function StartPage() {
                   value={list.menu7}
                   maxLength={5}
                 />
-                <input
+                <Input
                   name="menu8"
                   type="text"
                   placeholder="여덟 번째 메뉴"
