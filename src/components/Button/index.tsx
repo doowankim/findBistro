@@ -7,13 +7,14 @@ interface buttonProps {
 
   blue?: boolean;
   noWidth?: boolean;
+  style?: object;
 }
 
 function Button(props: buttonProps) {
   return (
     <div>
       <Styled.Button
-        style={{ width: props.noWidth ? '' : '120px' }}
+        style={{ width: props.noWidth ? `${props.style}` : '120px' }}
         blue={props.blue ? true : false}
         onClick={props.onClick}
       >
