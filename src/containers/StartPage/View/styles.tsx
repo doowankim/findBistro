@@ -5,10 +5,6 @@ interface iconProps {
   light?: boolean;
 }
 
-interface bottomProps {
-  blue?: boolean;
-}
-
 export const ButtonBox = styled.div`
   display: flex;
   width: max-content;
@@ -130,31 +126,4 @@ export const BottomBox = styled.div`
   width: 250px;
   justify-content: space-between;
   margin: 0 auto;
-`;
-
-export const BottomButton = styled.button<bottomProps>`
-  width: 120px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background: #f2f2f2;
-  padding: 10px 20px;
-  cursor: pointer;
-  transition: 0.35s;
-
-  &:hover {
-    background: ${darken(0.1, '#f2f2f2')};
-    transition: 0.35s;
-  }
-
-  &:focus {
-    outline: none;
-  }
-
-  ${props => {
-    if (props.blue)
-      return css`
-        background: #5b5bf7;
-        color: #fff;
-      `;
-  }}
 `;
