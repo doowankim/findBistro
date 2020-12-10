@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Modal, Header, Button, Roulette, RouletteButton, Input } from '../../components';
-import { BackgroundSetting } from '../../containers';
+import { Modal, Header, Button, Roulette, RouletteButton, Input } from '../../../components';
+import { BackgroundSetting } from '../../../containers';
 import * as Styled from './styles';
 
 function StartPage() {
