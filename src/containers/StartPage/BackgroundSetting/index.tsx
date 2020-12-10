@@ -3,7 +3,7 @@ import * as Styled from './styles';
 import { Modal } from '../../../components';
 
 interface backgroundProps {
-  onClickExit?: any;
+  onClickExit?: () => void;
 }
 
 function BackgroundSetting(props: backgroundProps) {

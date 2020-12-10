@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Modal, Header, Button, Roulette, RouletteButton, Input } from '../../components';
+import { BackgroundSetting } from '../../containers';
 import * as Styled from './styles';
 
 function StartPage() {
@@ -35,24 +36,7 @@ function StartPage() {
           <RouletteButton onClick={() => setRouletteState(true)} body="돌리기" rouletteState />
         </Styled.ButtonBox>
       </Styled.InputItem>
-      {modalState && (
-        <Modal>
-          <Styled.ModalTitle>배경 설정</Styled.ModalTitle>
-          <Styled.IconWrapper>
-            <Styled.IconBox light onClick={() => setModalState(false)}>
-              <Styled.Icon className="fas fa-sun" light />
-            </Styled.IconBox>
-            <Styled.IconBox onClick={() => setModalState(false)}>
-              <Styled.Icon className="far fa-moon" />
-            </Styled.IconBox>
-          </Styled.IconWrapper>
-          <Styled.IconText>
-            <div>라이트 모드</div>
-            <div>다크 모드</div>
-          </Styled.IconText>
-          <Styled.Button onClick={() => setModalState(false)}>기본 설정으로 시작하기</Styled.Button>
-        </Modal>
-      )}
+      {modalState && <BackgroundSetting onClickExit={() => setModalState(false)} />}
       {menu && (
         <Modal>
           <Styled.ModalTitle>메뉴를 넣어주세요</Styled.ModalTitle>
