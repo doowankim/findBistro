@@ -1,21 +1,20 @@
 import React, { useState } from 'react';
 import { Modal, Header, Button, Roulette, RouletteButton, Input } from '../../../components';
-import { BackgroundSetting } from '../../../containers';
 import * as Styled from './styles';
 
 function StartPage() {
-  const [modalState, setModalState] = useState<boolean>(true);
   const [rouletteState, setRouletteState] = useState<boolean>(false);
   const [menu, setMenu] = useState<boolean>(false);
+  const [update, isUpdate] = useState<boolean>(false);
   const [list, setList] = useState<any>({
-    menu1: null,
-    menu2: null,
-    menu3: null,
-    menu4: null,
-    menu5: null,
-    menu6: null,
-    menu7: null,
-    menu8: null,
+    menu1: '',
+    menu2: '',
+    menu3: '',
+    menu4: '',
+    menu5: '',
+    menu6: '',
+    menu7: '',
+    menu8: '',
   });
 
   const handleChange = (e: any) => {
@@ -24,6 +23,7 @@ function StartPage() {
 
   const onSubmit = () => {
     setMenu(false);
+    isUpdate(!update);
   };
   return (
     <div>
@@ -34,13 +34,12 @@ function StartPage() {
           <div>친구들, 직장동료들과 생각한 메뉴를 룰렛에 넣어보세요.</div>
           <div>밥생각이 딱 정해드릴게요.</div>
         </Styled.InputText>
-        <Roulette spin={rouletteState} menu={menu ? undefined : list} />
+        <Roulette spin={rouletteState} menu={update ? list : undefined} />
         <Styled.ButtonBox>
           <RouletteButton onClick={() => setMenu(true)} body="메뉴 넣기" />
           <RouletteButton onClick={() => setRouletteState(true)} body="돌리기" rouletteState />
         </Styled.ButtonBox>
       </Styled.InputItem>
-      {modalState && <BackgroundSetting onClickExit={() => setModalState(false)} />}
       {menu && (
         <Modal>
           <Styled.ModalTitle>메뉴를 넣어주세요</Styled.ModalTitle>
