@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Modal, Header, Button, Roulette, RouletteButton, Input } from '../../../components';
 import * as Styled from './styles';
 
@@ -27,13 +27,19 @@ function StartPage() {
     setMenuUpdate(!menuUpdate);
   };
 
+  const themeMode = () => {
+    isUpdate(!update);
+    window.sessionStorage.setItem('themeMode', update);
+  };
+
+  useEffect(() => {
+    if (window.sessionStorage.getItem('themeMode'))
+      isUpdate(window.sessionStorage.getItem('themeMode'));
+  }, []);
+
   return (
     <div>
-      <Header
-        backgroundMode={() => {
-          isUpdate(!update);
-        }}
-      />
+      <Header backgroundMode={themeMode} />
       <Styled.BodyContainer themeMode={update ? true : false}>
         <Styled.InputItem>
           <Styled.InputText themeMode={update ? true : false}>
