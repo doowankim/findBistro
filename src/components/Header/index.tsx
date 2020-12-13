@@ -2,7 +2,11 @@ import React from 'react';
 import * as Styled from './styles';
 import { Button } from '../../components';
 
-function Header() {
+interface headerProps {
+  backgroundMode?: () => void;
+}
+
+function Header(props: headerProps) {
   return (
     <Styled.Container>
       <Styled.Wrapper>
@@ -12,7 +16,15 @@ function Header() {
         </Styled.LogoBox>
         <div>
           <Styled.Menu>
-            <Button body="DARK / LIGHT" noWidth />
+            <Button
+              noWidth
+              body="DARK / LIGHT"
+              onClick={() => {
+                if (props.backgroundMode) {
+                  props.backgroundMode();
+                }
+              }}
+            />
           </Styled.Menu>
         </div>
       </Styled.Wrapper>

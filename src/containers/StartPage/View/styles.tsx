@@ -5,25 +5,53 @@ interface iconProps {
   light?: boolean;
 }
 
+interface backgroundProps {
+  themeMode?: boolean;
+}
+
 export const ButtonBox = styled.div`
   display: flex;
   width: max-content;
   margin: 40px auto;
 `;
 
+export const BodyContainer = styled.div<backgroundProps>`
+  height: 100vh;
+  background: #fff;
+  transition: 0.35s;
+
+  ${props => {
+    if (props.themeMode)
+      return css`
+        background: #191f2c;
+        transition: 0.35s;
+      `;
+  }}
+`;
+
 export const InputItem = styled.div`
   display: block;
 `;
 
-export const InputText = styled.div`
+export const InputText = styled.div<backgroundProps>`
   position: relative;
   width: max-content;
   align-items: center;
-  margin: 50px auto;
+  padding-top: 50px;
+  margin: 0px auto;
 
   div {
     color: #495057;
     line-height: 30px;
+    transition: 0.35s;
+
+    ${props => {
+      if (props.themeMode)
+        return css`
+          color: #fff;
+          transition: 0.35s;
+        `;
+    }}
   }
 `;
 
