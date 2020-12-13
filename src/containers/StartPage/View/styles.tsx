@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import * as color from '../../../colors/index';
 import { darken, lighten } from 'polished';
 
 interface iconProps {
@@ -17,13 +18,13 @@ export const ButtonBox = styled.div`
 
 export const BodyContainer = styled.div<backgroundProps>`
   height: 100vh;
-  background: #fff;
+  background: ${color.Colors.white};
   transition: 0.35s;
 
   ${props => {
     if (props.themeMode)
       return css`
-        background: #191f2c;
+        background: ${color.Colors.dark};
         transition: 0.35s;
       `;
   }}
@@ -41,14 +42,14 @@ export const InputText = styled.div<backgroundProps>`
   margin: 0px auto;
 
   div {
-    color: #495057;
+    color: ${color.Colors.primary};
     line-height: 30px;
     transition: 0.35s;
 
     ${props => {
       if (props.themeMode)
         return css`
-          color: #fff;
+          color: ${color.Colors.white};
           transition: 0.35s;
         `;
     }}
@@ -83,12 +84,12 @@ export const IconBox = styled.div<iconProps>`
   ${props => {
     if (props.light)
       return css`
-        background: #fff;
-        border: 1px solid #ddd;
+        background: ${color.Colors.white};
+        border: 1px solid ${color.Colors.line};
         transition: 0.35s;
 
         &:hover {
-          background: ${darken(0.05, '#fff')};
+          background: ${darken(0.05, `${color.Colors.white}`)};
           transition: 0.35s;
         }
       `;
@@ -96,7 +97,7 @@ export const IconBox = styled.div<iconProps>`
 `;
 
 export const Icon = styled.i<iconProps>`
-  color: #fff;
+  color: ${color.Colors.white};
   line-height: 50px;
 
   ${props => {
@@ -118,11 +119,11 @@ export const IconText = styled.div`
 
 export const Button = styled.button`
   width: 180px;
-  border: 1px solid #ddd;
+  border: 1px solid ${color.Colors.line};
   border-radius: 5px;
   padding: 10px 0;
   cursor: pointer;
-  background: #f2f2f2;
+  background: ${color.Colors.background};
   transition: 0.35s;
 
   &:focus {
@@ -130,7 +131,7 @@ export const Button = styled.button`
   }
 
   &:hover {
-    background: ${darken(0.05, '#f2f2f2')};
+    background: ${darken(0.05, `${color.Colors.background}`)};
     transition: 0.35s;
   }
 `;
