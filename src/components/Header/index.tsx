@@ -1,9 +1,10 @@
 import React from 'react';
 import * as Styled from './styles';
-import { Button } from '../../components';
+import { ThemeSwitch } from '../../components';
 
 interface headerProps {
   backgroundMode?: () => void;
+  switchStatus?: boolean;
 }
 
 function Header(props: headerProps) {
@@ -14,19 +15,14 @@ function Header(props: headerProps) {
           <Styled.Logo>밥생각</Styled.Logo>
           <Styled.LogoDescription>오늘 점심은 뭘 먹지? 🤪</Styled.LogoDescription>
         </Styled.LogoBox>
-        <div>
-          <Styled.Menu>
-            <Button
-              noWidth
-              body="DARK / LIGHT"
-              onClick={() => {
-                if (props.backgroundMode) {
-                  props.backgroundMode();
-                }
-              }}
-            />
-          </Styled.Menu>
-        </div>
+        <Styled.Menu>
+          <ThemeSwitch
+            status={props.switchStatus}
+            onClick={() => {
+              if (props.backgroundMode) props.backgroundMode();
+            }}
+          />
+        </Styled.Menu>
       </Styled.Wrapper>
     </Styled.Container>
   );

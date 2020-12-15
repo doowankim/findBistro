@@ -39,7 +39,7 @@ function StartPage() {
 
   return (
     <div>
-      <Header backgroundMode={themeMode} />
+      <Header backgroundMode={themeMode} switchStatus={update} />
       <Styled.BodyContainer themeMode={update ? true : false}>
         <Styled.InputItem>
           <Styled.InputText themeMode={update ? true : false}>
