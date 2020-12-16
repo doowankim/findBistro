@@ -27,7 +27,7 @@ export const SwitchBackground = styled.div<backgroundProps>`
   ${props => {
     if (props.bg)
       return css`
-        background: #424040;
+        background: #898585;
         transition: 0.25s;
       `;
   }}
@@ -47,15 +47,22 @@ export const SwitchItem = styled.div<backgroundProps>`
   ${props => {
     if (props.bg)
       return css`
-        background: ${color.Colors.line};
+        /* background: #00a9ff; */
         left: 27px;
       `;
   }}
 `;
 
-export const Icon = styled.i<backgroundProps>`
+export const MoonIcon = styled.i`
   font-size: 22px;
   line-height: 30px;
   margin-left: 2px;
   color: ${color.Colors.yellow};
+`;
+
+export const SunIcon = styled.i`
+  font-size: 22px;
+  line-height: 30px;
+  margin-left: 4px;
+  color: #ffd800;
 `;

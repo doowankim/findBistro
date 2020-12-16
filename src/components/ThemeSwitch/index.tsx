@@ -11,7 +11,11 @@ const ThemeSwitch = (props: switchProps) => {
     <Styled.SwitchContainer>
       <Styled.SwitchBackground bg={props.status ? true : false} onClick={props.onClick}>
         <Styled.SwitchItem bg={props.status ? true : false}>
-          <Styled.Icon className="fas fa-moon" />
+          {props.status ? (
+            <Styled.MoonIcon className="fas fa-moon" />
+          ) : (
+            <Styled.SunIcon className="fas fa-sun" />
+          )}
         </Styled.SwitchItem>
       </Styled.SwitchBackground>
     </Styled.SwitchContainer>
