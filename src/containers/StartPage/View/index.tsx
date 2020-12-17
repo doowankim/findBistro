@@ -131,7 +131,7 @@ function StartPage() {
               </div>
             </Styled.InputBox>
             <Styled.BottomDescription>
-              * 빈 칸으로 처리하면 룰렛에 꽝으로 입력됩니다.
+              * 입력하지 않으면 룰렛에 꽝으로 들어갑니다.
             </Styled.BottomDescription>
             <Styled.BottomBox>
               <Button body="완료" blue onClick={onSubmit} />
