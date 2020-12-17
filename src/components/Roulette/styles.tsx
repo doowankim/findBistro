@@ -1,4 +1,5 @@
 import styled, { keyframes, css } from 'styled-components';
+import * as color from '../../colors/index';
 
 interface fillProps {
   fill_1?: boolean;
@@ -20,6 +21,10 @@ interface loopProps {
   spinner?: boolean;
 }
 
+interface arrowProps {
+  white?: boolean;
+}
+
 const rotation = keyframes`
     from {
         transform: rotate(0deg);
@@ -31,13 +36,20 @@ const rotation = keyframes`
 
 export const RouletteBox = styled.div``;
 
-export const Arrow = styled.div`
+export const Arrow = styled.div<arrowProps>`
   width: 0;
   height: 0;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
   border-top: 20px solid #000;
   margin: 30px auto 0 auto;
+
+  ${props => {
+    if (props.white)
+      return css`
+        border-top: 20px solid ${color.Colors.line};
+      `;
+  }}
 `;
 
 export const Circle = styled.div<loopProps>`

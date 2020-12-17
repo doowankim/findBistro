@@ -3,6 +3,7 @@ import * as Styled from './styles';
 
 interface rouletteProps {
   spin?: boolean;
+  update?: boolean;
   menu?: any;
 }
 
@@ -18,7 +19,7 @@ function Roulette(props: rouletteProps) {
 
   return (
     <Styled.RouletteBox>
-      <Styled.Arrow />
+      <Styled.Arrow white={props.update ? true : false} />
       <Styled.Circle spinner={props.spin ? true : false}>
         <Styled.Fill fill_1>
           <Styled.Content>{menu1 === '' ? '꽝' : menu1}</Styled.Content>

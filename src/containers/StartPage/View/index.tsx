@@ -47,7 +47,7 @@ function StartPage() {
             <div>친구들, 직장동료들과 생각한 메뉴를 룰렛에 넣어보세요.</div>
             <div>밥생각이 딱 정해드릴게요.</div>
           </Styled.InputText>
-          <Roulette spin={rouletteState} menu={menuUpdate ? list : undefined} />
+          <Roulette spin={rouletteState} menu={menuUpdate ? list : undefined} update={update} />
           <Styled.ButtonBox>
             <RouletteButton onClick={() => setMenu(true)} body="메뉴 넣기" />
             <RouletteButton onClick={() => setRouletteState(true)} body="돌리기" rouletteState />
