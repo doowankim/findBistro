@@ -145,7 +145,7 @@ export const InputBox = styled.div`
     margin-bottom: 10px;
 
     &:last-child {
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
   }
 `;
@@ -155,4 +155,11 @@ export const BottomBox = styled.div`
   width: 250px;
   justify-content: space-between;
   margin: 0 auto;
+`;
+
+export const BottomDescription = styled.div`
+  font-size: 12px;
+  font-weight: bold;
+  color: #ed2828;
+  margin-bottom: 10px;
 `;

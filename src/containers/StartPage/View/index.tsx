@@ -24,7 +24,7 @@ function StartPage() {
 
   const onSubmit = () => {
     setMenu(false);
-    setMenuUpdate(!menuUpdate);
+    setMenuUpdate(true);
   };
 
   const themeMode = () => {
@@ -130,6 +130,9 @@ function StartPage() {
                 />
               </div>
             </Styled.InputBox>
+            <Styled.BottomDescription>
+              * 빈 칸으로 처리하면 룰렛에 꽝으로 입력됩니다.
+            </Styled.BottomDescription>
             <Styled.BottomBox>
               <Button body="완료" blue onClick={onSubmit} />
               <Button body="닫기" onClick={() => setMenu(false)} />
