@@ -8,6 +8,7 @@ interface startProps {
 
 function StartPage(props: startProps) {
   const [rouletteState, setRouletteState] = useState<boolean>(false);
+  const [reset, setReset] = useState<boolean>(false);
   const [menu, setMenu] = useState<boolean>(false);
   const [menuUpdate, setMenuUpdate] = useState<boolean>(false);
   const [list, setList] = useState<any>({
@@ -23,6 +24,22 @@ function StartPage(props: startProps) {
 
   const handleChange = (e: any) => {
     setList({ ...list, [e.target.name]: e.target.value });
+  };
+
+  const onRoulette = () => {
+    if (menuUpdate) {
+      setRouletteState(true);
+      setTimeout(() => {
+        setReset(true);
+      }, 7000);
+    } else {
+      alert('먼저 메뉴를 넣어주세요');
+    }
+  };
+
+  const onReset = () => {
+    setRouletteState(false);
+    setReset(false);
   };
 
   const onSubmit = () => {
@@ -46,7 +63,11 @@ function StartPage(props: startProps) {
           />
           <Styled.ButtonBox>
             <RouletteButton onClick={() => setMenu(true)} body="메뉴 넣기" />
-            <RouletteButton onClick={() => setRouletteState(true)} body="돌리기" rouletteState />
+            {rouletteState && reset ? (
+              <RouletteButton onClick={onReset} body="한 번더!" rouletteState />
+            ) : (
+              <RouletteButton onClick={onRoulette} body="돌리기" rouletteState />
+            )}
           </Styled.ButtonBox>
         </Styled.InputItem>
         {menu && (
