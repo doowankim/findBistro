@@ -1,12 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import { Modal, Header, Button, Roulette, RouletteButton, Input } from '../../../components';
+import React, { useState } from 'react';
+import { Modal, Button, Roulette, RouletteButton, Input } from '../../../components';
 import * as Styled from './styles';
 
-function StartPage() {
+interface startProps {
+  themeMode?: boolean;
+}
+
+function StartPage(props: startProps) {
   const [rouletteState, setRouletteState] = useState<boolean>(false);
   const [menu, setMenu] = useState<boolean>(false);
   const [menuUpdate, setMenuUpdate] = useState<boolean>(false);
-  const [update, isUpdate] = useState<boolean>(false);
   const [list, setList] = useState<any>({
     menu1: '',
     menu2: '',
@@ -27,27 +30,20 @@ function StartPage() {
     setMenuUpdate(true);
   };
 
-  const themeMode = () => {
-    isUpdate(!update);
-    window.sessionStorage.setItem('themeMode', update);
-  };
-
-  useEffect(() => {
-    if (window.sessionStorage.getItem('themeMode'))
-      isUpdate(window.sessionStorage.getItem('themeMode'));
-  }, []);
-
   return (
     <div>
-      <Header backgroundMode={themeMode} switchStatus={update} />
-      <Styled.BodyContainer themeMode={update ? true : false}>
+      <Styled.BodyContainer themeMode={props.themeMode ? true : false}>
         <Styled.InputItem>
-          <Styled.InputText themeMode={update ? true : false}>
+          <Styled.InputText themeMode={props.themeMode ? true : false}>
             <div>아직도 점심식사로 고민하세요?</div>
             <div>친구들, 직장동료들과 생각한 메뉴를 룰렛에 넣어보세요.</div>
             <div>밥생각이 딱 정해드릴게요.</div>
           </Styled.InputText>
-          <Roulette spin={rouletteState} menu={menuUpdate ? list : undefined} update={update} />
+          <Roulette
+            spin={rouletteState}
+            menu={menuUpdate ? list : undefined}
+            update={props.themeMode}
+          />
           <Styled.ButtonBox>
             <RouletteButton onClick={() => setMenu(true)} body="메뉴 넣기" />
             <RouletteButton onClick={() => setRouletteState(true)} body="돌리기" rouletteState />
