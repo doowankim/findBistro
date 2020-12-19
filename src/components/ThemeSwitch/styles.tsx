@@ -59,10 +59,3 @@ export const MoonIcon = styled.i`
   margin-left: 2px;
   color: ${color.Colors.yellow};
 `;
-
-export const SunIcon = styled.i`
-  font-size: 22px;
-  line-height: 30px;
-  margin-left: 4px;
-  color: #ffd800;
-`;
