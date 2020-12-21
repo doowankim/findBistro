@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import * as color from '../../../colors/index';
+import { darken } from 'polished';
 
 interface backgroundProps {
   themeMode?: boolean;
@@ -49,6 +50,22 @@ export const ButtonBox = styled.div`
   display: flex;
   width: max-content;
   margin: 40px auto;
+`;
+
+export const BottomText = styled.div`
+  width: max-content;
+  color: ${color.Colors.primary};
+  margin: 0px auto;
+  padding: 5px 10px;
+  border: 1px solid ${color.Colors.line};
+  border-radius: 5px;
+  transition: 0.35s;
+  cursor: pointer;
+
+  &:hover {
+    background: ${darken(0.1, `${color.Colors.white}`)};
+    transition: 0.35s;
+  }
 `;
 
 export const ModalTitle = styled.div`

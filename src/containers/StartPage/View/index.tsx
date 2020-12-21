@@ -69,6 +69,7 @@ function StartPage(props: startProps) {
               <RouletteButton onClick={onRoulette} body="돌리기" rouletteState />
             )}
           </Styled.ButtonBox>
+          <Styled.BottomText>맛집 찾아보기</Styled.BottomText>
         </Styled.InputItem>
         {menu && (
           <Modal>
