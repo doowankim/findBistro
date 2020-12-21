@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Header } from '../components';
-import { StartPage } from '../containers';
+import { StartPage, SearchMap } from '../containers';
 
 function Router() {
   const [update, isUpdate] = useState<boolean>(false);
@@ -21,6 +21,9 @@ function Router() {
       <Switch>
         <Route exact path="/">
           <StartPage themeMode={update} />
+        </Route>
+        <Route exact path="/searchMap">
+          <SearchMap />
         </Route>
       </Switch>
     </BrowserRouter>
