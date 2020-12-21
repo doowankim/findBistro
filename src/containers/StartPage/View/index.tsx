@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { Modal, Button, Roulette, RouletteButton, Input } from '../../../components';
 import * as Styled from './styles';
 
@@ -7,6 +8,8 @@ interface startProps {
 }
 
 function StartPage(props: startProps) {
+  const history = useHistory();
+
   const [rouletteState, setRouletteState] = useState<boolean>(false);
   const [reset, setReset] = useState<boolean>(false);
   const [menu, setMenu] = useState<boolean>(false);
@@ -69,7 +72,9 @@ function StartPage(props: startProps) {
               <RouletteButton onClick={onRoulette} body="돌리기" rouletteState />
             )}
           </Styled.ButtonBox>
-          <Styled.BottomText>맛집 찾아보기</Styled.BottomText>
+          <Styled.BottomText onClick={() => history.push('/searchMap')}>
+            맛집 찾아보기
+          </Styled.BottomText>
         </Styled.InputItem>
         {menu && (
           <Modal>
